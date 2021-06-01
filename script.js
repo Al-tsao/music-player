@@ -9,6 +9,41 @@ const nextBtn = document.getElementById('next');
 // Music
 const songs = [
   {
+    name: 'BARMAN_WORKING',
+    displayName: 'Barman Working',
+    artist: 'Maverick',
+  },
+  {
+    name: 'SERVING_DRINKS',
+    displayName: 'Serving Drinks',
+    artist: 'Maverick',
+  },
+  {
+    name: 'PEOPLE_TALKING',
+    displayName: 'People Talking',
+    artist: 'Maverick',
+  },
+  {
+    name: 'STREET_AMBIENCE',
+    displayName: 'Street Ambience',
+    artist: 'Maverick',
+  },
+  {
+    name: 'NIGHT_AMBIENCE',
+    displayName: 'Night Ambience',
+    artist: 'Maverick',
+  },
+  {
+    name: 'RAIN_ON_WINDOW',
+    displayName: 'Rain on Window',
+    artist: 'Maverick',
+  },
+  {
+    name: 'jacinto-1',
+    displayName: 'Electric Chill Machine',
+    artist: 'Maverick',
+  },
+  {
     name: 'jacinto-1',
     displayName: 'Electric Chill Machine',
     artist: 'Jacinto Design',
