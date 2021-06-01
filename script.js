@@ -111,6 +111,8 @@ let songIndex = 0;
 
 // Previous song
 function prevSong() {
+  currentTimeEl.textContent = `0:00`;
+  progress.style.width = `0%`;
   songIndex--
   if (songIndex < 0) {
     songIndex = songs.length - 1;
@@ -121,6 +123,8 @@ function prevSong() {
 
 // Next song
 function nextSong() {
+  currentTimeEl.textContent = `0:00`;
+  progress.style.width = `0%`;
   songIndex++
   if (songIndex > songs.length - 1) {
     songIndex = 0;
