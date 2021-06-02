@@ -17,7 +17,7 @@ body {
 }
 
 .player-container {
-  height: 550px;
+  height: 535px;
   width: 400px;
   background: #e7e7e7;
   border-radius: 20px;
@@ -28,7 +28,7 @@ body {
   height: 300px;
   width: 300px;
   position: relative;
-  top: -50px;
+  top: -25px;
   left: 50px;
 }
 
