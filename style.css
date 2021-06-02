@@ -17,7 +17,7 @@ body {
 }
 
 .player-container {
-  height: 500px;
+  height: 550px;
   width: 400px;
   background: #e7e7e7;
   border-radius: 20px;
@@ -78,7 +78,7 @@ h3 {
   justify-content: space-between;
 }
 
-/* Controls */
+/* Player Controls */
 .player-controls {
   position: relative;
   top: -15px;
@@ -90,8 +90,8 @@ h3 {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
- cursor: pointer;
- user-select: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .fas:hover {
@@ -104,6 +104,62 @@ h3 {
   font-size: 40px;
   position: relative;
   top: 3px;
+}
+
+/* Sound Controls */
+.sound-controls{
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-volume-down,
+.fa-volume-up{
+  margin: 0;
+}
+
+.fa-volume-down{
+  margin-left: 25px;
+}
+
+.fa-volume-up{
+  margin-right: 25px;
+}
+
+.sound-bar-container {
+  width: 60%;
+ 
+}
+
+.sound-bar {
+  position: relative;
+  right: 4px;
+  top: 8px;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #242323  50%, #fff 50%);
+}
+
+.sound-bar::-webkit-slider-thumb
+ {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #242323;
+  border-radius: 50%;
+  border: 2px solid #e7e7e7;
+  cursor: pointer;
+}
+
+.sound-bar::-moz-range-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #242323;
+  border-radius: 50%;
+  border: 2px solid #e7e7e7;
+  cursor: pointer;
 }
 
 /* Media Query: iPhone (Vertical) */

@@ -9,6 +9,9 @@ const durationEl = document.getElementById('duration');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
+const soundBar = document.getElementById('sound-bar');
+const volumeDown = document.getElementById('volume-down');
+const volumeUp = document.getElementById('volume-up');
 
 // Music
 const songs = [
@@ -47,31 +50,6 @@ const songs = [
     displayName: 'Rain on Window',
     artist: 'Maverick',
   },
-  // {
-  //   name: 'jacinto-1',
-  //   displayName: 'Electric Chill Machine',
-  //   artist: 'Maverick',
-  // },
-  // {
-  //   name: 'jacinto-1',
-  //   displayName: 'Electric Chill Machine',
-  //   artist: 'Jacinto Design',
-  // },
-  // {
-  //   name: 'jacinto-2',
-  //   displayName: 'Seven Nation Army (Remix)',
-  //   artist: 'Jacinto Design',
-  // },
-  // {
-  //   name: 'jacinto-3',
-  //   displayName: 'Goodnight, Disco Queen',
-  //   artist: 'Jacinto Design',
-  // },
-  // {
-  //   name: 'metric-1',
-  //   displayName: 'Front Row (Remix)',
-  //   artist: 'Metric/Jacinto Design',
-  // },
 ];
 
 // Check if playing
@@ -104,6 +82,8 @@ function loadSong(song) {
   artist.textContent = song.artist;
   music.src = `music/${song.name}.mp3`;
   image.src = `img/${song.name}.jpg`;
+  music.volume = soundBar.value / 100;
+  console.log(music.volume);
 }
 
 // Current song
@@ -189,9 +169,31 @@ function setProgressBar(e) {
   currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
 }
 
+// Set sound bar 
+function soundBarMove() {
+  const soundBarValue = soundBar.value;
+  const color = `linear-gradient(90deg, #242323  ${soundBarValue}%, #fff ${soundBarValue}%)`;
+  soundBar.style.background = color;
+  console.log(soundBarValue)
+  music.volume = soundBarValue / 100;
+}
+// Sound volume up and down
+function downSoundVolume() {
+  soundBar.value--;
+  soundBarMove();
+}
+
+function upSoundVolume() {
+  soundBar.value++;
+  soundBarMove();
+}
+
 // Event Listeners
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
-progressContainer.addEventListener('click', setProgressBar)
+progressContainer.addEventListener('click', setProgressBar);
+soundBar.addEventListener('input', soundBarMove);
+volumeDown.addEventListener('click', downSoundVolume);
+volumeUp.addEventListener('click', upSoundVolume);
